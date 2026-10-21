@@ -1,0 +1,328 @@
+/* =========================
+   1. GLOBAL
+========================= */
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, "Segoe UI", sans-serif;
+  color: #1e293b;
+  background: #f5f8f6;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --green-primary: #16a34a;
+  --green-dark: #15803d;
+  --green-light: #dcfce7;
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+  --border-color: #e2e8f0;
+  --card-shadow: 0 4px 20px rgba(15, 23, 42, 0.045);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: Inter, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at 5% 0%, rgba(34, 197, 94, 0.06), transparent 28%),
+    #f5f8f6;
+  color: var(--text-primary);
+}
+
+/* =========================
+   2. DASHBOARD LAYOUT
+========================= */
+.dashboard {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+
+.dashboard-header h2 {
+  margin: 0 0 6px !important;
+  color: var(--text-primary);
+  font-size: 28px;
+  font-weight: 750;
+  letter-spacing: -0.6px;
+}
+
+.dashboard-header p {
+  color: var(--text-secondary);
+}
+
+/* =========================
+   3. CARDS
+========================= */
+.metric-card,
+.pump-card,
+.chart-card {
+  height: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  border-radius: 18px;
+  box-shadow: var(--card-shadow);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.metric-card:hover,
+.pump-card:hover,
+.chart-card:hover {
+  transform: translateY(-3px);
+  border-color: #bbf7d0;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+}
+
+.metric-card .ant-card-body,
+.pump-card .ant-card-body,
+.chart-card .ant-card-body {
+  padding: 24px;
+}
+
+/* =========================
+   4. SENSOR METRICS
+========================= */
+.metric-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.metric-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-size: 24px;
+}
+
+.metric-value {
+  margin-top: 22px;
+  color: var(--text-primary);
+  font-size: 36px;
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  overflow-wrap: anywhere;
+}
+
+.metric-value span {
+  margin-left: 6px;
+  color: var(--text-secondary);
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* =========================
+   5. PUMP CONTROL
+========================= */
+.pump-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.pump-row h5 {
+  margin: 0 0 6px !important;
+  color: var(--text-primary);
+}
+
+.pump-card .ant-segmented {
+  padding: 4px;
+  border-radius: 10px;
+  background: #f1f5f9;
+}
+
+.pump-card .ant-segmented-item-selected {
+  border-radius: 8px;
+}
+
+.pump-card .ant-btn {
+  min-height: 38px;
+  border-radius: 9px;
+  font-weight: 600;
+}
+
+.pump-card .ant-btn-primary {
+  background: var(--green-primary);
+  box-shadow: none;
+}
+
+.pump-card .ant-btn-primary:hover {
+  background: var(--green-dark) !important;
+}
+
+.pump-card .ant-alert {
+  margin-top: 16px;
+  border-radius: 12px;
+}
+
+/* =========================
+   6. CHARTS
+========================= */
+.chart-card {
+  border-radius: 18px;
+}
+
+.chart-container {
+  width: 100%;
+  height: 300px;
+  margin-top: 12px;
+}
+
+.chart-card .ant-card-head {
+  min-height: 60px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.chart-card .ant-card-head-title {
+  color: var(--text-primary);
+  font-weight: 650;
+}
+
+/* =========================
+   7. STATUS & UPDATES
+========================= */
+.last-update {
+  margin: 20px 0 12px;
+  color: var(--text-secondary);
+  font-size: 13px;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 300px;
+  color: var(--text-secondary);
+}
+
+/* =========================
+   8. ANT DESIGN REFINEMENTS
+========================= */
+.ant-tag {
+  border-radius: 7px;
+  padding: 3px 9px;
+  font-weight: 600;
+}
+
+.ant-alert {
+  border-radius: 12px;
+}
+
+.ant-typography {
+  overflow-wrap: anywhere;
+}
+
+/* =========================
+   9. RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  .dashboard {
+    padding: 26px 20px;
+  }
+
+  .dashboard-header h2 {
+    font-size: 25px;
+  }
+
+  .metric-card .ant-card-body,
+  .pump-card .ant-card-body,
+  .chart-card .ant-card-body {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dashboard {
+    padding: 20px 14px;
+  }
+
+  .dashboard-header {
+    align-items: flex-start;
+    margin-bottom: 22px;
+  }
+
+  .dashboard-header h2 {
+    font-size: 23px;
+  }
+
+  .metric-card,
+  .pump-card,
+  .chart-card {
+    border-radius: 14px;
+  }
+
+  .metric-card .ant-card-body,
+  .pump-card .ant-card-body,
+  .chart-card .ant-card-body {
+    padding: 18px;
+  }
+
+  .metric-value {
+    margin-top: 18px;
+    font-size: 30px;
+  }
+
+  .metric-value span {
+    font-size: 15px;
+  }
+
+  .metric-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 21px;
+  }
+
+  .pump-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .chart-container {
+    height: 250px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
