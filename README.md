@@ -8,11 +8,11 @@ The system collects environmental data, monitors soil moisture, manages water pu
 
 ### Web Dashboard
 
-![Smart Greenhouse Dashboard](docs/images/dashboard.png)
+![Smart Greenhouse Dashboard](docs/images/dashboard.jpg)
 
 ### Hardware Circuit
 
-![Smart Greenhouse Hardware Circuit](docs/images/hardware-circuit.png)
+![Smart Greenhouse Hardware Circuit](docs/images/hardware-circuit.jpg)
 
 ### System Architecture
 
